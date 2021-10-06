@@ -1,0 +1,14 @@
+
+.btnWrapper{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+}
+#circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px black solid;
+}
+
