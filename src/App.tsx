@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion";
+import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import { UnCtrlOnOff } from './components/OnOff/UnCtrLOnOff';
+import { UnCtrlOnOff } from './components/UnControlledOnOff/UnCtrLOnOff';
 
 
 function App() {

@@ -3,7 +3,7 @@ import React from "react";
 
 export type RatingValueType = 0| 1| 2 | 3 | 4 | 5
 
-type RatingPropsTypes = {
+export type RatingPropsTypes = {
     value: RatingValueType
     setValue: (ratingValue: RatingValueType) => void
 }

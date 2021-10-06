@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import s from './onOff.module.css'
+import s from '../OnOff/onOff.module.css'
 
 type PropsType = { onChange: (switched: boolean) => void }
 
