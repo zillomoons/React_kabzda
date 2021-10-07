@@ -4,6 +4,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import { UnCtrlOnOff } from './components/UnControlledOnOff/UnCtrLOnOff';
+import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 
 
 function App() {
@@ -16,19 +17,14 @@ function App() {
     return (
         <div className={'appWrapper'}>
             <Accordion titleValue={"Users"} collapsed={collapsed} changeCollapsed={changeCollapsed}/>
-            <Rating value={ratingValue} setValue={setRatingValue}/>
+            {/*<Rating value={ratingValue} setValue={setRatingValue}/>*/}
             {/*<OnOff switched={switched} changeSwitch={changeSwitch}/>*/}
             {/*<UnControlledAccordion titleValue={"Users2"} />*/}
-            {/*<UnControlledRating />*/}
+            <UnControlledRating onChange={setRatingValue} />{ratingValue.toString()}
             <UnCtrlOnOff onChange={setSwitch} /> {switched.toString()}
         </div>
     );
 }
 
-
-// type PageTitlePropsType = { title : string}
-// const PageTitle =(props: PageTitlePropsType) => {
-//     return <h1>{props.title}</h1>
-// }
 
 export default App;

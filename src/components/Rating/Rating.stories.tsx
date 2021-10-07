@@ -3,14 +3,10 @@ import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {Rating, RatingValueType} from './Rating';
 
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Rating',
     component: Rating,
-    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-    // argTypes: {
-    //     backgroundColor: { control: 'color' },
-    // },
+
 } as ComponentMeta<typeof Rating>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -20,6 +16,7 @@ export const EmptyRating = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 EmptyRating.args = {
     value: 0,
+    setValue: x => x,
 };
 
 export const Rating1 = Template.bind({});

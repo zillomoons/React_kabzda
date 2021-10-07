@@ -1,14 +1,19 @@
 import React from "react";
+import {RatingValueType} from "../Rating/Rating";
 
 type StarPropsType = {
     selected: boolean
-    setValue: (value: number) => void
-    value: 1 | 2 | 3 | 4 | 5
+    setValue: (value: RatingValueType) => void
+    value: RatingValueType
+    onChange: (value: RatingValueType)=> void
 }
 
 export const UnCtrlStar = (props: StarPropsType) => {
 
-    const onSetValue = () => { props.setValue(props.value)}
+    const onSetValue = () => {
+        props.setValue(props.value);
+        props.onChange(props.value)
+    }
     return (
         <>
             <span onClick={onSetValue}> { props.selected ? <b>star</b> : "star" } </span>
