@@ -1,7 +1,12 @@
 import React, {useState} from 'react'
 import s from './onOff.module.css'
 
-type OnOffPropsType = { switched: boolean, changeSwitch: () => void }
+type OnOffPropsType = {
+    switched: boolean,
+    /**
+     * callback that changes value to true or false
+     */
+    changeSwitch: () => void }
 
 export const OnOff = (props: OnOffPropsType) => {
 

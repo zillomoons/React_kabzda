@@ -6,6 +6,16 @@ import {OnOff} from "./components/OnOff/OnOff";
 import { UnCtrlOnOff } from './components/UnControlledOnOff/UnCtrLOnOff';
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 
+export type UsersType = {
+    _id: number,
+    userName: string
+}
+const users: Array<UsersType> = [
+    {_id: 1, userName: 'Julia'},
+    {_id: 2, userName: 'Antony'},
+    {_id: 3, userName: 'Irin'},
+    {_id: 4, userName: 'Luca'},
+]
 
 function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType >(0)
@@ -16,12 +26,15 @@ function App() {
 
     return (
         <div className={'appWrapper'}>
-            <Accordion titleValue={"Users"} collapsed={collapsed} changeCollapsed={changeCollapsed}/>
-            {/*<Rating value={ratingValue} setValue={setRatingValue}/>*/}
-            {/*<OnOff switched={switched} changeSwitch={changeSwitch}/>*/}
+            <Accordion titleValue={"Users"}
+                       collapsed={collapsed}
+                       users={users}
+                       changeCollapsed={changeCollapsed}/>
+            <Rating value={ratingValue} setValue={setRatingValue}/>
+            <OnOff switched={switched} changeSwitch={changeSwitch}/>
             {/*<UnControlledAccordion titleValue={"Users2"} />*/}
-            <UnControlledRating onChange={setRatingValue} />{ratingValue.toString()}
-            <UnCtrlOnOff onChange={setSwitch} /> {switched.toString()}
+            {/*<UnControlledRating onChange={setRatingValue} />{ratingValue.toString()}*/}
+            {/*<UnCtrlOnOff onChange={setSwitch} /> {switched.toString()}*/}
         </div>
     );
 }

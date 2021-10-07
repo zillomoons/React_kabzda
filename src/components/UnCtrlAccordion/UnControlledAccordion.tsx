@@ -11,7 +11,7 @@ const Accordion = (props: AccordionPropsType) => {
     return <div>
         <UnCtrlAccordionTitle title={props.titleValue}
                               onSetCollapsed={ () => {setCollapsed (!collapsed)}} />
-        {collapsed && <AccordionBody/>}
+        {/*{collapsed && <AccordionBody/>}*/}
     </div>
 
 }
