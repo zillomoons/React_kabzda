@@ -1,14 +1,11 @@
-import React, {useRef, useState, MouseEvent} from 'react';
+import React, {useRef, useState, MouseEvent, ChangeEvent} from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
+import {action} from "@storybook/addon-actions";
 
 
 export default {
     title: 'input',
-    // component: Button,
-    // // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-    // argTypes: {
-    //   backgroundColor: { control: 'color' },
-    // },
+
 };
 
 export const UncontrolledInput = () => <input/>;
@@ -49,4 +46,32 @@ export const GetValueOfUncontrolledInputByButtonPress2 = () => {
         <button onClick={save}>save</button>
         - actual value: {value}
     </>
+}
+
+export const ControlledInput = () => {
+    const [parentValue, setParentValue] = useState('')
+    const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentValue(e.currentTarget.value)
+    }
+    return <input value={parentValue} onChange={onChangeInput}/>
+}
+export const ControlledCheckbox = () => {
+    const [parentValue, setParentValue] = useState(true)
+    const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentValue(e.currentTarget.checked)
+    }
+    return <input type={"checkbox"} checked={parentValue} onChange={onChangeInput}/>
+}
+export const ControlledSelect = () => {
+    const [parentValue, setParentValue] = useState<string | undefined>('2')
+    const onChangeInput = (e: ChangeEvent<HTMLSelectElement>) => {
+        setParentValue(e.currentTarget.value)
+    }
+    return <select value={parentValue} onChange={onChangeInput}>
+        <option>none</option>
+        <option value="1">Minsk</option>
+        <option value="2">Moscow</option>
+        <option value="3">Kiev</option>
+    </select>
+
 }
