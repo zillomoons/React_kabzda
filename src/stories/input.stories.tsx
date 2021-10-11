@@ -3,7 +3,7 @@ import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 
 export default {
-    title: 'Example/Button',
+    title: 'input',
     // component: Button,
     // // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     // argTypes: {
