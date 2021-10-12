@@ -17,19 +17,19 @@ export const Select: React.FC<SelectPropsType> = ({items, selectValue, onItemCli
             {selectValue.toString()}
             <button className={s.buttonSelect}>v</button>
         </div>
-        {!collapsed && <ul>
+        {!collapsed && <div className={s.items}>
             {items.map((item) => {
                 const onChangeSelect =() => {
                     onItemClick(item.value);
                     setCollapsed(true);
                 }
-                return <li key={item.id}
+                return <div key={item.id}
                            className={s.item}
                            onClick={onChangeSelect}>
                     {item.title}
-                </li>
+                </div>
             })}
-        </ul> }
+        </div> }
 
     </div>
 }

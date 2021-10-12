@@ -1,20 +1,33 @@
 .select {
     border-bottom: #1ea7fd 2px solid;
-    text-align: center;
-    width: 200px;
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
 }
 .selectWrapper{
     cursor: pointer;
+    margin-top: 50px;
+}
+.items {
+    position: absolute;
 }
 .item{
-    width: 200px;
+    width: 180px;
 }
+
 .item:hover{
-    background: whitesmoke;
+    background: rgb(151, 220, 220);
+    color: white;
+
 }
 .buttonSelect{
     border: none;
     background: none;
     font-weight: bold;
     margin-left: 10px;
+}
+.item.selected {
+    background: rgb(151, 220, 220);
+    color: white;
+
 }

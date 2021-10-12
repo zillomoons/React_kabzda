@@ -23,11 +23,11 @@ const OnUserClick = (value: any) => {
 export type ItemType = { id: number, title: string, value: any}
 
 const items: ItemType[] = [
-    {id: 0, title: 'none', value: 0},
-    {id: 1, title: 'Prague', value: 1},
-    {id: 2, title: 'Helsinki', value: 2},
-    {id: 3, title: 'Berlin', value: 3},
-    {id: 4, title: 'Stockholm', value: 4},
+    {id: 0, title: 'none', value: '0'},
+    {id: 1, title: 'Prague', value: '1'},
+    {id: 2, title: 'Helsinki', value: '2'},
+    {id: 3, title: 'Berlin', value: '3'},
+    {id: 4, title: 'Stockholm', value: '4'},
 ]
 
 function App() {
