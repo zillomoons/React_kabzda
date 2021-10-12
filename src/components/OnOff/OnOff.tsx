@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import s from './onOff.module.css'
 
 type OnOffPropsType = {

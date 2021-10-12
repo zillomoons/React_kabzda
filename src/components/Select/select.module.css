@@ -1,0 +1,20 @@
+.select {
+    border-bottom: #1ea7fd 2px solid;
+    text-align: center;
+    width: 200px;
+}
+.selectWrapper{
+    cursor: pointer;
+}
+.item{
+    width: 200px;
+}
+.item:hover{
+    background: whitesmoke;
+}
+.buttonSelect{
+    border: none;
+    background: none;
+    font-weight: bold;
+    margin-left: 10px;
+}
