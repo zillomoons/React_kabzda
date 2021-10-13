@@ -4,6 +4,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {Select} from "./components/Select/select";
+import {Select2} from "./components/Select/select2";
 
 export type UsersType = {
     _id: number,
@@ -34,7 +35,8 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType >(0)
     let [collapsed, setCollapsed] = useState(false)
     let [switched,setSwitch] = useState(false)
-    const [selectValue, setSelectValue] = React.useState<string>('Choose capital')
+    const [selectValue, setSelectValue] = React.useState<any>('Choose capital')
+    const [selectValue2, setSelectValue2] = React.useState<any>('0')
     const onItemClick = (value: any) => items.find(i => (i.value === value) && setSelectValue(i.title))
     const changeCollapsed = () => { setCollapsed(!collapsed)};
     const changeSwitch = () => {setSwitch(!switched)}
@@ -49,6 +51,7 @@ function App() {
             <Rating value={ratingValue} setValue={setRatingValue}/>
             <OnOff switched={switched} changeSwitch={changeSwitch}/>
             <Select items={items} selectValue={selectValue} onItemClick={onItemClick} />
+            <Select2 items={items} value={selectValue2} onChange={setSelectValue2} />
             {/*<UnControlledAccordion titleValue={"Users2"} />*/}
             {/*<UnControlledRating onChange={setRatingValue} />{ratingValue.toString()}*/}
             {/*<UnCtrlOnOff onChange={setSwitch} /> {switched.toString()}*/}
