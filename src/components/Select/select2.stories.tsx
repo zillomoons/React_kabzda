@@ -17,7 +17,11 @@ export const SelectCollapsedMode2 = Template.bind({});
 SelectCollapsedMode2.args = {
     items: [],
 }
-export const SelectUncollapsedMode2 = Template.bind({});
+
+export const SelectUncollapsedMode2: ComponentStory<typeof Select2> = (args) => {
+    const [selectValue, setSelectValue] = React.useState<any>(2)
+    return <Select2 {...args} onChange={setSelectValue} value={selectValue} />
+}
 SelectUncollapsedMode2.args = {
     items: [
         {id: 0, title: 'none', value: 0},
