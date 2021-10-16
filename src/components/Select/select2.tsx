@@ -10,10 +10,11 @@ type SelectPropsType = {
 
 export const Select2: React.FC<SelectPropsType> = ({items, value, onChange}) => {
     const selectedItem = items.find(i => i.value === value)
+    const hoveredItem = items.find(i => i.value === hoveredElementValue)
+
     const [collapsed, setCollapsed] = React.useState<boolean>(true);
     const [hoveredElementValue, setHoveredElementValue] = React.useState(value)
 
-    const hoveredItem = items.find(i => i.value === hoveredElementValue)
 
     useEffect(() => {
         setHoveredElementValue(value);

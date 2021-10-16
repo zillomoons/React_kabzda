@@ -19,30 +19,30 @@ SelectCollapsedMode2.args = {
 }
 
 export const SelectUncollapsedMode2: ComponentStory<typeof Select2> = (args) => {
-    const [selectValue, setSelectValue] = React.useState<any>(2)
+    const [selectValue, setSelectValue] = React.useState<any>('2')
     return <Select2 {...args} onChange={setSelectValue} value={selectValue} />
 }
 SelectUncollapsedMode2.args = {
     items: [
-        {id: 0, title: 'none', value: 0},
-        {id: 1, title: 'Prague', value: 1},
-        {id: 2, title: 'Helsinki', value: 2},
-        {id: 3, title: 'Berlin', value: 3},
-        {id: 4, title: 'Stockholm', value: 4},
+        {id: 0, title: 'none', value: '0'},
+        {id: 1, title: 'Prague', value: '1'},
+        {id: 2, title: 'Helsinki', value: '2'},
+        {id: 3, title: 'Berlin', value: '3'},
+        {id: 4, title: 'Stockholm', value: '4'},
     ],
     onChange: callback
 }
 export const SelectChangingMode2: ComponentStory<typeof Select2> = (args) => {
-    const [selectValue, setSelectValue] = React.useState<any>(2)
+    const [selectValue, setSelectValue] = React.useState<any>('2')
     return <Select2 {...args} onChange={setSelectValue} value={selectValue} />
 }
 SelectChangingMode2.args = {
     items: [
-        {id: 0, title: 'none', value: 0},
-        {id: 1, title: 'Prague', value: 1},
-        {id: 2, title: 'Helsinki', value: 2},
-        {id: 3, title: 'Berlin', value: 3},
-        {id: 4, title: 'Stockholm', value: 4},
+        {id: 0, title: 'none', value: '0'},
+        {id: 1, title: 'Prague', value: '1'},
+        {id: 2, title: 'Helsinki', value: '2'},
+        {id: 3, title: 'Berlin', value: '3'},
+        {id: 4, title: 'Stockholm', value: '4'},
     ]
 }
 
