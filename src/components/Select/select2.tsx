@@ -2,25 +2,27 @@ import React, {KeyboardEvent, useEffect} from 'react';
 import {ItemType} from "../../App";
 import s from './select.module.css';
 
+export type SelectValues = '0'| '1'| '2' | '3' | '4'
+
 type SelectPropsType = {
     items: ItemType[]
-    value: any
-    onChange: (value: any) => void
+    value: SelectValues
+    onChange: (value: SelectValues) => void
 }
 
 export const Select2: React.FC<SelectPropsType> = ({items, value, onChange}) => {
-    const selectedItem = items.find(i => i.value === value)
-    const hoveredItem = items.find(i => i.value === hoveredElementValue)
 
     const [collapsed, setCollapsed] = React.useState<boolean>(true);
     const [hoveredElementValue, setHoveredElementValue] = React.useState(value)
 
+    const selectedItem = items.find(i => i.value === value)
+    const hoveredItem = items.find(i => i.value === hoveredElementValue)
 
     useEffect(() => {
         setHoveredElementValue(value);
     }, [value])
 
-    const onChangeSelect = (value: any) => {
+    const onChangeSelect = (value: SelectValues) => {
         onChange(value);
         setCollapsed(true);
     }

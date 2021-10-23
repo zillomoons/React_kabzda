@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useReducer} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import {Select} from "./components/Select/select";
-import {Select2} from "./components/Select/select2";
+import {Select2, SelectValues} from "./components/Select/select2";
+import {ChangeRatingValueAC, ChangeSelectValueAC, reducer, ToggleCollapsedAC, ToggleSwitchedAC} from "./state/reducer";
 
 export type UsersType = {
     _id: number,
@@ -22,7 +22,6 @@ const OnUserClick = (value: any) => {
 }
 
 export type ItemType = { id: number, title: string, value: any}
-
 const items: ItemType[] = [
     {id: 0, title: 'none', value: '0'},
     {id: 1, title: 'Prague', value: '1'},
@@ -31,33 +30,52 @@ const items: ItemType[] = [
     {id: 4, title: 'Stockholm', value: '4'},
 ]
 
+export type StateType = {
+    ratingValue: RatingValueType
+    collapsed: boolean
+    switched: boolean
+    selectValue: SelectValues
+}
+
 function App() {
-    let [ratingValue, setRatingValue] = useState<RatingValueType >(0)
-    let [collapsed, setCollapsed] = useState(false)
-    let [switched,setSwitch] = useState(false)
-    const [selectValue, setSelectValue] = React.useState<any>('Choose capital')
-    const [selectValue2, setSelectValue2] = React.useState<any>('0')
-    const onItemClick = (value: any) => items.find(i => (i.value === value) && setSelectValue(i.title))
-    const changeCollapsed = () => { setCollapsed(!collapsed)};
-    const changeSwitch = () => {setSwitch(!switched)}
+
+    const [state, dispatch] = useReducer(reducer,{
+        ratingValue: 0,
+        collapsed: false,
+        switched: false,
+        selectValue: '0'
+    })
+
+
+    const changeRatingValue = (value: RatingValueType) => {
+        dispatch(ChangeRatingValueAC(value))
+    }
+    const toggleCollapsed = () => {
+        dispatch(ToggleCollapsedAC())
+    };
+    const toggleSwitch = () => {
+        dispatch(ToggleSwitchedAC())
+    }
+    const changeSelectValue = (value: SelectValues) => {
+        dispatch(ChangeSelectValueAC(value))
+    }
 
     return (
         <div className={'appWrapper'}>
             <Accordion titleValue={"Users"}
-                       collapsed={collapsed}
+                       collapsed={state.collapsed}
                        users={users}
                        onClick={OnUserClick}
-                       changeCollapsed={changeCollapsed}/>
-            <Rating value={ratingValue} setValue={setRatingValue}/>
-            <OnOff switched={switched} changeSwitch={changeSwitch}/>
-            <Select items={items} selectValue={selectValue} onItemClick={onItemClick} />
-            <Select2 items={items} value={selectValue2} onChange={setSelectValue2} />
+                       changeCollapsed={toggleCollapsed}/>
+            <Rating value={state.ratingValue} changeRating={changeRatingValue}/>
+            <OnOff switched={state.switched} changeSwitch={toggleSwitch}/>
+            <Select2 items={items} value={state.selectValue} onChange={changeSelectValue} />
+
             {/*<UnControlledAccordion titleValue={"Users2"} />*/}
             {/*<UnControlledRating onChange={setRatingValue} />{ratingValue.toString()}*/}
             {/*<UnCtrlOnOff onChange={setSwitch} /> {switched.toString()}*/}
         </div>
     );
 }
-
 
 export default App;
