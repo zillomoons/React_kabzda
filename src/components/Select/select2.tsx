@@ -10,7 +10,7 @@ type SelectPropsType = {
     onChange: (value: SelectValues) => void
 }
 
-export const Select2: React.FC<SelectPropsType> = ({items, value, onChange}) => {
+const Select2_Private: React.FC<SelectPropsType> = ({items, value, onChange}) => {
 
     const [collapsed, setCollapsed] = React.useState<boolean>(true);
     const [hoveredElementValue, setHoveredElementValue] = React.useState(value)
@@ -72,4 +72,6 @@ export const Select2: React.FC<SelectPropsType> = ({items, value, onChange}) => 
 
     </div>
 }
+
+export const Select2 = React.memo(Select2_Private);
 

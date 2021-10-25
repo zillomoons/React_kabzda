@@ -8,7 +8,7 @@ type OnOffPropsType = {
      */
     changeSwitch: () => void }
 
-export const OnOff = (props: OnOffPropsType) => {
+const OnOff_Private = (props: OnOffPropsType) => {
 
     const onStyle = { backgroundColor: props.switched ? 'limegreen' : 'white'}
     const offStyle = { backgroundColor: props.switched ? 'white' : 'red'}
@@ -22,3 +22,4 @@ export const OnOff = (props: OnOffPropsType) => {
         </div>
     )
 }
+export const OnOff = React.memo(OnOff_Private);
