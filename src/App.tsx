@@ -21,13 +21,19 @@ const OnUserClick = (value: any) => {
     alert('User with number:  ' + value)
 }
 
-export type ItemType = { id: number, title: string, value: any}
+export type ItemType = { id: number, title: string, value: any, country: string, population: number}
 const items: ItemType[] = [
-    {id: 0, title: 'none', value: '0'},
-    {id: 1, title: 'Prague', value: '1'},
-    {id: 2, title: 'Helsinki', value: '2'},
-    {id: 3, title: 'Berlin', value: '3'},
-    {id: 4, title: 'Stockholm', value: '4'},
+    {id: 1, title: 'Prague', value: '1', country: 'Czech', population: 5454887},
+    {id: 2, title: 'Helsinki', value: '2', country: 'Finland', population: 5454887},
+    {id: 3, title: 'Berlin', value: '3', country: 'Germany', population: 5454887},
+    {id: 4, title: 'Stockholm', value: '4', country: 'Sweden', population: 5454887},
+    {id: 5, title: 'Moscow', value: '5', country: 'Russia',population: 11920000},
+    {id: 6, title: 'Voronezh', value: '6', country: 'Russia', population: 997400},
+    {id: 7, title: 'Minsk', value: '7', country: 'Belarus', population: 1975000},
+    {id: 8, title: 'Brest', value: '8', country: 'Belarus', population: 343985},
+    {id: 8, title: 'New York', value: '9', country: 'USA', population: 8920000},
+    {id: 10, title: 'Miami', value: '10', country: 'USA', population: 478251}
+
 ]
 
 export type StateType = {

@@ -13,8 +13,7 @@ type SelectPropsType = {
 const Select2_Private: React.FC<SelectPropsType> = ({items, value, onChange}) => {
 
     const [collapsed, setCollapsed] = React.useState<boolean>(true);
-    const [hoveredElementValue, setHoveredElementValue] = React.useState(value)
-
+    const [hoveredElementValue, setHoveredElementValue] = React.useState(value);
     const selectedItem = items.find(i => i.value === value)
     const hoveredItem = items.find(i => i.value === hoveredElementValue)
 

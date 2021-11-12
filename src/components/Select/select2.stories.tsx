@@ -24,11 +24,11 @@ export const SelectUncollapsedMode2: ComponentStory<typeof Select2> = (args) => 
 }
 SelectUncollapsedMode2.args = {
     items: [
-        {id: 0, title: 'none', value: '0'},
-        {id: 1, title: 'Prague', value: '1'},
-        {id: 2, title: 'Helsinki', value: '2'},
-        {id: 3, title: 'Berlin', value: '3'},
-        {id: 4, title: 'Stockholm', value: '4'},
+        {id: 0, title: 'none', value: '0', population: 5454887},
+        {id: 1, title: 'Prague', value: '1', population: 5454887},
+        {id: 2, title: 'Helsinki', value: '2', population: 5454887},
+        {id: 3, title: 'Berlin', value: '3', population: 5454887},
+        {id: 4, title: 'Stockholm', value: '4', population: 5454887},
     ],
     onChange: callback
 }
@@ -38,11 +38,11 @@ export const SelectChangingMode2: ComponentStory<typeof Select2> = (args) => {
 }
 SelectChangingMode2.args = {
     items: [
-        {id: 0, title: 'none', value: '0'},
-        {id: 1, title: 'Prague', value: '1'},
-        {id: 2, title: 'Helsinki', value: '2'},
-        {id: 3, title: 'Berlin', value: '3'},
-        {id: 4, title: 'Stockholm', value: '4'},
+        {id: 0, title: 'none', value: '0', population: 5454887},
+        {id: 1, title: 'Prague', value: '1', population: 5454887},
+        {id: 2, title: 'Helsinki', value: '2', population: 5454887},
+        {id: 3, title: 'Berlin', value: '3', population: 5454887},
+        {id: 4, title: 'Stockholm', value: '4', population: 5454887},
     ]
 }
 
