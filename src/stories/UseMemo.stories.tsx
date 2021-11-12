@@ -89,7 +89,7 @@ export const LikeUseCallback = () => {
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
         {counter}
-        <Books addBook={memoizedAddBook}/>
+        <Books addBook={memoizedAddBook2}/>
     </>
 }
 const BooksPrivate = (props: { addBook: () => void }) => {
