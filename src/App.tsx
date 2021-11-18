@@ -5,6 +5,7 @@ import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {Select2, SelectValues} from "./components/Select/select2";
 import {ChangeRatingValueAC, ChangeSelectValueAC, reducer, ToggleCollapsedAC, ToggleSwitchedAC} from "./state/reducer";
+import {Clock} from "./components/clock/Clock";
 
 export type UsersType = {
     _id: number,
@@ -32,8 +33,7 @@ const items: ItemType[] = [
     {id: 7, title: 'Minsk', value: '7', country: 'Belarus', population: 1975000},
     {id: 8, title: 'Brest', value: '8', country: 'Belarus', population: 343985},
     {id: 8, title: 'New York', value: '9', country: 'USA', population: 8920000},
-    {id: 10, title: 'Miami', value: '10', country: 'USA', population: 478251}
-
+    {id: 10, title: 'Miami', value: '10', country: 'USA', population: 478251},
 ]
 
 export type StateType = {
@@ -76,7 +76,7 @@ function App() {
             <Rating value={state.ratingValue} changeRating={changeRatingValue}/>
             <OnOff switched={state.switched} changeSwitch={toggleSwitch}/>
             <Select2 items={items} value={state.selectValue} onChange={changeSelectValue} />
-
+            <Clock typeOfClock='analogue'/>
             {/*<UnControlledAccordion titleValue={"Users2"} />*/}
             {/*<UnControlledRating onChange={setRatingValue} />{ratingValue.toString()}*/}
             {/*<UnCtrlOnOff onChange={setSwitch} /> {switched.toString()}*/}
