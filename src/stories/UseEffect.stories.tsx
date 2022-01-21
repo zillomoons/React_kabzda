@@ -113,3 +113,57 @@ export const SetIntervalClockExample = () => {
         </>
     )
 }
+
+export const KeysTrackerExample = () => {
+
+    const [text, setText] = useState('');
+    
+    console.log('Component rendered with', text)
+
+    useEffect(() => {
+        const handler = (e: KeyboardEvent)=> {
+            console.log(e.key)
+            setText((state)=> state + e.key)
+        }
+        window.addEventListener('keypress', handler)
+
+        return ()=> {
+            console.log('RESET EFFECT')
+            window.removeEventListener('keypress', handler)
+        }
+    }, [])
+    
+    return (
+        <>
+           Typed text: {text} 
+
+        </>
+    )
+}
+export const SetTimeoutExample  = () => {
+
+    const [text, setText] = useState('');
+    
+    console.log('Component rendered with', text)
+
+    useEffect(() => {
+        const timeoutId = setTimeout(()=>{
+            setText('3 seconds have passed')
+        }, 3000)
+
+        return ()=> {
+            clearTimeout(timeoutId)
+        }
+    }, [text])
+    
+    return (
+        <>
+           Typed text: {text} 
+
+        </>
+    )
+}
+/*setTimeout, setInterval, window.addEventlisteners - 
+keypress, onclick, scroll - need to cleanup effects
+websocket, etc.
+*/
